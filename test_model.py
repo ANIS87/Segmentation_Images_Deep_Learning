@@ -4,7 +4,7 @@ from PIL import Image
 
 import sys
 
-sys.path.append("/home/duffman/caffe/python")
+sys.path.append("caffe/python")
 import caffe 
 #caffe.set_mode_gpu()
 def mse(imageA, imageB):
