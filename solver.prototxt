@@ -14,5 +14,5 @@ iter_size: 1
 max_iter: 100000
 weight_decay: 0.0005
 snapshot: 50000
-snapshot_prefix: "model/train_32_classes"
+snapshot_prefix: "train_32_classes"
 test_initialization: false
