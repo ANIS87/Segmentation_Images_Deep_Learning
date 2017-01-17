@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-caffe_root = '/home/duffman/workspace/anis/Test_Segmentation/Segmentation_corps/humanparsing/Train_model/FCN8/model_seg_final/crfasrnn/caffe/'
+caffe_root = 'crfasrnn/caffe/'
 import sys, getopt
 sys.path.insert(0, caffe_root + 'python')
 import caffe
@@ -42,8 +42,8 @@ def interp_surgery(net, layers):
 
 
 #weights = 'train_iter_200000.caffemodel'
-weights ='model/train_16_WB_classes_iter_150000.caffemodel'
-solver = caffe.SGDSolver('solver_16.prototxt')
+weights ='train_32_classes_iter_1000.caffemodel'
+solver = caffe.SGDSolver('solver.prototxt')
 #solver.net.copy_from(weights)
 
 #interp_layers = [k for k in solver.net.params.keys() if 'up' in k]
