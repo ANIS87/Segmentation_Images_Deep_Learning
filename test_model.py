@@ -20,7 +20,7 @@ def mse(imageA, imageB):
 
 # load image, switch to BGR, subtract mean, and make dims C x H x W for Caffe
 
-im = Image.open('4565_1901.jpg')
+im = Image.open('a.jpg')
 
 #im = im.resize([300, 300], Image.ANTIALIAS)
 
@@ -80,7 +80,7 @@ data=x
 rescaled = (255.0*data).astype(np.uint8)
   
 im = Image.fromarray(rescaled)
-save_image='4565_1901_segmentation.png'
+save_image='a.png'
 im.save(save_image)
   #im = Image.open('test.png')
   #in_ = np.array(im).astype('uint8')
