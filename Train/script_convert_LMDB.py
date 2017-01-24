@@ -1,7 +1,7 @@
 
 
 import sys 
-sys.path.append("/home/duffman/caffe/python")
+sys.path.append("caffe/python")
 import caffe
 import lmdb
 from PIL import Image
