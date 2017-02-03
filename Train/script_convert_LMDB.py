@@ -60,13 +60,9 @@ in_db = lmdb.open('Train_Label_lmdb',map_size=int(1e12))
 
 with in_db.begin(write=True) as in_txn:
 	for in_idx, in_ in enumerate(inputs_Train_Label):
-	    print in_idx,in_
-	    
-	
+	    print in_idx,in_   
             im=np.array(Image.open(in_))
 	    im = im.astype(np.uint8)
-           
-               
             im = im[np.newaxis, :, :]
  	    im_dat = caffe.io.array_to_datum(np.array(im))
 	    in_txn.put('{:0>10d}'.format(in_idx),im_dat.SerializeToString())
@@ -85,12 +81,10 @@ with in_db.begin(write=True) as in_txn:
             im = np.array(Image.open(in_)) # or load whatever ndarray you need
             Dtype = im.dtype
             if (len(im.shape)==3):
-               im = im[:,:,::-1]             
-                    
+               im = im[:,:,::-1]  
                im = im.transpose((2,0,1))
             else:
-               im = im.astype(np.uint8)
-               
+               im = im.astype(np.uint8)               
                im = im[np.newaxis, :, :] 
             im_dat = caffe.io.array_to_datum(im)
             in_txn.put('{:0>10d}'.format(in_idx),im_dat.SerializeToString())
@@ -104,13 +98,9 @@ in_db = lmdb.open('Test_Label_lmdb',map_size=int(1e12))
 
 with in_db.begin(write=True) as in_txn:
         for in_idx, in_ in enumerate(inputs_Test_Label):
-            print in_idx
-
-          
+            print in_idx          
             im=np.array(Image.open(in_))
-            im = im.astype(np.uint8)
-            
-
+            im = im.astype(np.uint8)          
             im = im[np.newaxis, :, :]
             im_dat = caffe.io.array_to_datum(np.array(im))
             in_txn.put('{:0>10d}'.format(in_idx),im_dat.SerializeToString())
