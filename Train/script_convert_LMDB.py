@@ -29,10 +29,6 @@ inputs_Test_Label=inputs_label[5000:7000]
 
 
 print("Creating Training Data LMDB File ..... ")
-
-
-
-
 in_db = lmdb.open('Train_Data_lmdb',map_size=int(1e12))
 with in_db.begin(write=True) as in_txn:
 	for in_idx, in_ in enumerate(inputs_Train):
@@ -52,8 +48,6 @@ with in_db.begin(write=True) as in_txn:
 	    in_txn.put('{:0>10d}'.format(in_idx),im_dat.SerializeToString())
 
 in_db.close()
-
-
 print("Creating Training Label LMDB File ..... ")
 
 in_db = lmdb.open('Train_Label_lmdb',map_size=int(1e12))
@@ -71,8 +65,6 @@ in_db.close()
 print 'ok'
 
 print('test_lambd')
-
-
 in_db = lmdb.open('Test_Data_lmdb',map_size=int(1e12))
 with in_db.begin(write=True) as in_txn:
         for in_idx, in_ in enumerate(inputs_Test):
@@ -90,7 +82,6 @@ with in_db.begin(write=True) as in_txn:
             in_txn.put('{:0>10d}'.format(in_idx),im_dat.SerializeToString())
 
 in_db.close()
-
 
 print("Creating Testing Label LMDB File ..... ")
 
