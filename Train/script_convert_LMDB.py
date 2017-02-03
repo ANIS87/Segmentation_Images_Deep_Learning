@@ -62,14 +62,7 @@ with in_db.begin(write=True) as in_txn:
 	for in_idx, in_ in enumerate(inputs_Train_Label):
 	    print in_idx,in_
 	    
-	    # Load label
-	    ##mat = h5py.File('/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/FCN_2L_Cut/train/mask/fashion_mask_' +in_[-8:-3]+ 'mat')
-	    #print '/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/mask_mat/fashion_mask_' +in_[-8:-3]+ 'mat'
-	    ##x = mat["fashion_mask"]
-
-	    # in_label = '/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/FCN/train/mask/im'+in_[-8:-3]+'png'
-
-	    #print in_label
+	
             im=np.array(Image.open(in_))
 	    im = im.astype(np.uint8)
            
@@ -113,14 +106,7 @@ with in_db.begin(write=True) as in_txn:
         for in_idx, in_ in enumerate(inputs_Test_Label):
             print in_idx
 
-            # Load label
-            ##mat = h5py.File('/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/FCN_2L_Cut/train/mask/fashion_mask_' +in_[-8:-3]+ 'mat')
-            #print '/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/mask_mat/fashion_mask_' +in_[-8:-3]+ 'mat'
-            ##x = mat["fashion_mask"]
-
-            # in_label = '/home/lixuan/Documents/MATLAB/DressSegmentation/tmm_dataset_sharing/FCN/train/mask/im'+in_[-8:-3]+'png'
-
-            #print in_label
+          
             im=np.array(Image.open(in_))
             im = im.astype(np.uint8)
             
